@@ -25,7 +25,7 @@ function findMaxLength(filepath: string): Promise<any> {
       readStream.once('error', _ => resolve(null));
       rl.on("line", (line: string) => {
 
-        const patternString = new RegExp(/#string/);
+        const patternString = new RegExp(/^#string/);
         if(line.match(patternString))
         {
           currentLength = line.split(' ')[1].trim().split('\t')[0].length; //add .split('\t')[0] to avoid tab between stringName and #language
