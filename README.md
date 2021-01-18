@@ -1,5 +1,5 @@
 # edk2-uni-formatting
-This is a Microsoft VSCode extension be adopted to formatting EDK2 unicode files(`.uni`).
+The Microsoft VSCode extension formats EDK2 unicode files(_.uni_).
 
 ## Installation
 Download [edk2-uni-formatting-0.0.1.vsix](https://github.com/pinshengjuan/edk2-uni-formatting/blob/master/edk2-uni-formatting-0.0.1.vsix) and running VS Code's `"Install from VSIX..."` command.
