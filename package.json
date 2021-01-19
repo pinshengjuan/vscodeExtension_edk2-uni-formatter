@@ -19,6 +19,12 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"languages": [
+			{
+				"id": "edk2_uni",
+				"extensions": [ ".uni" ]
+			}
+		],
 		"commands": [
 			{
 				"command": "edk2-uni-formatting.formatUni",
