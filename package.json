@@ -63,8 +63,6 @@
 		"vscode-test": "^1.4.0"
 	},
 	"dependencies": {
-		"charset-detector": "0.0.2",
-		"encoding-japanese": "^1.0.30",
-		"nan": "^2.14.2"
+		"encoding-japanese": "^1.0.30"
 	}
 }
