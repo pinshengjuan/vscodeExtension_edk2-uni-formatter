@@ -15,7 +15,7 @@
 		"url": "https://github.com/pinshengjuan/edk2-uni-formatting"
 	},
 	"activationEvents": [
-		"*"
+		"onLanguage:edk2_uni"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
