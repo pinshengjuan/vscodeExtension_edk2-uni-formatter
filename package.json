@@ -3,7 +3,7 @@
 	"displayName": "EDK2-UNI-formatter",
 	"description": "",
 	"version": "0.0.1",
-	"publisher": "Corey",
+	"publisher": "pinshengjuan",
 	"engines": {
 		"vscode": "^1.52.0"
 	},
