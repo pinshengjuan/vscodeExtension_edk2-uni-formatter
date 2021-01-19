@@ -7,7 +7,7 @@ import main from "./main";
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-  context.subscriptions.push(vscode.commands.registerCommand('edk2-uni-formatting.formatUni', (uri:vscode.Uri) => {
+  context.subscriptions.push(vscode.commands.registerCommand('edk2-uni-formatter.formatUni', (uri:vscode.Uri) => {
     main(uri.fsPath); //This is the entry point of the whole project
   }));
 }

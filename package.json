@@ -1,6 +1,6 @@
 {
-	"name": "edk2-uni-formatting",
-	"displayName": "EDK2-UNI-Formatting",
+	"name": "edk2-uni-formatter",
+	"displayName": "EDK2-UNI-formatter",
 	"description": "",
 	"version": "0.0.1",
 	"publisher": "Corey",
@@ -12,7 +12,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/pinshengjuan/edk2-uni-formatting"
+		"url": "https://github.com/pinshengjuan/edk2-uni-formatter"
 	},
 	"activationEvents": [
 		"onLanguage:edk2_uni"
@@ -27,7 +27,7 @@
 		],
 		"commands": [
 			{
-				"command": "edk2-uni-formatting.formatUni",
+				"command": "edk2-uni-formatter.formatUni",
 				"title": "Format Document"
 			}
 		],
@@ -35,7 +35,7 @@
 			"editor/context": [
 				{
 					"when": "resourceLangId == edk2_uni",
-					"command": "edk2-uni-formatting.formatUni",
+					"command": "edk2-uni-formatter.formatUni",
 					"group": "navigation"
 				}
 			]
