@@ -7,14 +7,13 @@ function detectFileEncoding(filepath: string): Promise<any> {
     /**
      * create local variable
      */
-      const encoding = require('encoding-japanese');
-      const fileBuffer = fs.readFileSync(filepath);
-      const encodingType: string = encoding.detect(fileBuffer);
+      const chardet = require('chardet');
+      const encodingType: string = chardet.detectFileSync(filepath);
 
     /**
      * Determine if it's utf16 encoded
      */
-      if(encodingType === 'UTF16')
+      if(encodingType === 'UTF-16LE')
       {
         resolve(encodingType);
       }
