@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as readline from "readline";
 
-function findMaxLength(filepath: string): Promise<any> {
+function findMaxLength(filepath: string, fileEncoding: string): Promise<any> {
   return new Promise(resolve => {
     /**
      * create local variable
@@ -13,7 +13,7 @@ function findMaxLength(filepath: string): Promise<any> {
      * create read stream & readline interface
      */
     const readStream = fs.createReadStream(filepath);
-    readStream.setEncoding('utf16le');
+    readStream.setEncoding(fileEncoding);
     const rl = readline.createInterface({
       input: readStream,
       crlfDelay: Infinity,

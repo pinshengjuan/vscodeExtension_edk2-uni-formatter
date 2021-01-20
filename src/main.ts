@@ -13,11 +13,11 @@ function main(filePath: string)
 {
   detectFileEncoding(filePath).then(function(fileEncoding){
     // console.log('encoding right');
-    findMaxLength(filePath).then(function(maxStringLength){
+    findMaxLength(filePath, fileEncoding).then(function(maxStringLength){
       // console.log('return value of findMaxLength: ' + maxStringLength);
-      formatFile(filePath, maxStringLength).then(function(fileString){
+      formatFile(filePath, fileEncoding, maxStringLength).then(function(fileString){
         // console.log(fileString);
-        writeUni(filePath, fileString);
+        writeUni(filePath, fileEncoding, fileString);
       });
     });
   }).catch(function(err){

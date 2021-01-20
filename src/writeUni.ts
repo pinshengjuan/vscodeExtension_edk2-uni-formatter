@@ -1,11 +1,11 @@
 import * as fs from 'fs';
 import * as util from 'util';
 
-function writeUni(filepath: string, fileString: string){
+function writeUni(filepath: string, fileEncoding: string, fileString: string){
 
   const writeFile = util.promisify(fs.writeFile);
 
-  writeFile(filepath, fileString, { encoding: 'utf16le' })
+  writeFile(filepath, fileString, { encoding: fileEncoding })
   .then(() => {
           console.log('File created!');
   })

@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as readline from "readline";
 import { ONE_SPACE, EIGHT_SPACES, HASH_STRING, HASH_LANGUAGE } from "./constants";
 
-function formatFile(filepath: string, maxStringLength: number): Promise<any> {
+function formatFile(filepath: string, fileEncoding: string, maxStringLength: number): Promise<any> {
   return new Promise(resolve => {
     /**
      * create local variable
@@ -27,7 +27,7 @@ function formatFile(filepath: string, maxStringLength: number): Promise<any> {
      * create read stream & readline interface
      */
     const readStream = fs.createReadStream(filepath);
-    readStream.setEncoding('utf16le');
+    readStream.setEncoding(fileEncoding);
     const rl = readline.createInterface({
       input: readStream,
       crlfDelay: Infinity,
