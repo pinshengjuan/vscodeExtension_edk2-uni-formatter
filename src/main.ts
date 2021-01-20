@@ -20,8 +20,6 @@ function main(filePath: string)
         writeUni(filePath, fileEncoding, fileString);
       });
     });
-  }).catch(function(err){
-    console.log(err);
   });
 }
 
