@@ -2,8 +2,5 @@
 
 All notable changes to the "edk2-uni-formatter" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+### 0.0.2
+* change detect encoding module from "encoding-japanese" to "chardet".
