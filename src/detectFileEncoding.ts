@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as readline from "readline";
 
 function detectFileEncoding(filepath: string): Promise<any> {
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     /**
      * create local variable
      */
@@ -11,16 +11,9 @@ function detectFileEncoding(filepath: string): Promise<any> {
       const encodingType: string = chardet.detectFileSync(filepath);
 
     /**
-     * Determine if it's utf16 encoded
+     * resolve result
      */
-      if(encodingType === 'UTF-16LE')
-      {
-        resolve(encodingType);
-      }
-      else
-      {
-        reject('The file is not \'UTF16\' encoded\nProcess ended\n');
-      }
+      resolve(encodingType);
   });
 }
 
