@@ -45,7 +45,7 @@ function formatFile(filepath: string, fileEncoding: string, maxStringLength: num
         let spacesBetweenIdentifierAndLang: string = '';
         if(line.match(patternString)) //這個判斷式處理開頭為#string的行
         {
-          identifierName = line.split(' ')[1].trim().split('\t')[0]; //add .split('\t')[0] to avoid tab between identifierName and #language
+          identifierName = line.split("#string")[1].trim().split(/\s+/)[0];
           identifierNameLength = identifierName.length;//計算 #string後面接的字串的長度(e.g., #string ACPI_STR, 會計算ACPI_STR的長度，也就是8)
           identifierLineMaxSpaceBehind = maxStringLength - identifierNameLength; //Calculate spaces that needed between identifierName and #language
           for(genSpaceCurrentNum=0 ; genSpaceCurrentNum<identifierLineMaxSpaceBehind ; genSpaceCurrentNum++) {
