@@ -1,8 +1,8 @@
 {
 	"name": "edk2-uni-formatter",
-	"displayName": "EDK2-UNI-formatter",
+	"displayName": "EDK2 uni formatter",
 	"description": "",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"publisher": "pinshengjuan",
 	"engines": {
 		"vscode": "^1.52.0"
