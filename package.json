@@ -40,6 +40,12 @@
 					"command": "edk2-uni-formatter.formatUni",
 					"group": "navigation"
 				}
+			],
+			"explorer/context": [
+				{
+					"when": "resourceLangId == edk2_uni",
+					"command": "edk2-uni-formatter.formatUni"
+				}
 			]
 		}
 	},
