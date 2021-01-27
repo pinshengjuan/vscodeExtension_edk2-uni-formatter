@@ -54,19 +54,19 @@ function formatFile(filepath: string, fileEncoding: string, maxStringLength: num
           
           spacesBetweenIdentifierAndLang = spacesBetweenIdentifierAndLang + EIGHT_SPACES; //將identifierName 和 #language中間加8個空白
           identifierValue = line.trim().split(HASH_LANGUAGE)[1]; //!!!Notice!!! this string got ONE space ahead
-          fileString = fileString + HASH_STRING + identifierName + spacesBetweenIdentifierAndLang + HASH_LANGUAGE + identifierValue + '\n';
+          fileString = fileString + HASH_STRING + identifierName + spacesBetweenIdentifierAndLang + HASH_LANGUAGE + identifierValue + '\r\n';
         }
         else if(line.trim().match(patternLanguage)) //這段處理前面是一堆空白接#language的行
         {
-          fileString = fileString + langLineMaxSpaceAhead + line.trim() + '\n';
+          fileString = fileString + langLineMaxSpaceAhead + line.trim() + '\r\n';
         }
         else if(line.trim() === '') //將只有Tab或/和space的行換成一換行符號
         {
-          fileString += '\n';
+          fileString += '\r\n';
         }
         else
         {
-          fileString = fileString + line + '\n';
+          fileString = fileString + line + '\r\n';
         }
       });
       
