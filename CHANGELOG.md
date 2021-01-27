@@ -2,6 +2,9 @@
 
 All notable changes to the "edk2-uni-formatter" extension will be documented in this file.
 
+### 1.0.3
+* Add CR at the end of string.
+
 ### 1.0.2
 * Change Display name.
 
