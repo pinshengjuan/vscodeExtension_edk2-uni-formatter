@@ -2,6 +2,10 @@
 
 All notable changes to the "edk2-uni-formatter" extension will be documented in this file.
 
+### 1.1.0
+* Add feature for user can define spaces between Token and LanguageCode.
+![](img/change.jpg)
+
 ### 1.0.5
 * Add the usage under EXPLORER on README.
 
