@@ -27,6 +27,17 @@
 				]
 			}
 		],
+		"configuration": {
+			"title": "EDK2 uni formatter",
+			"properties": {
+				"edk2-uni-formatter.spaceOnMaxTokenAndLan": {
+					"type": "number",
+					"default": 8,
+					"minimum": 1,
+					"description": "Provide space numbers between max length Token and LanguageCodes"
+				}
+			}
+		},
 		"commands": [
 			{
 				"command": "edk2-uni-formatter.formatUni",

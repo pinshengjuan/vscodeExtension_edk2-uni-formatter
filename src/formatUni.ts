@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as readline from "readline";
-import { ONE_SPACE, EIGHT_SPACES, HASH_STRING, HASH_LANGUAGE } from "./constants";
+import * as vscode from 'vscode';
+import { ONE_SPACE, HASH_STRING, HASH_LANGUAGE } from "./constants";
 
 function formatFile(filepath: string, fileEncoding: string, maxStringLength: number): Promise<any> {
   return new Promise(resolve => {
@@ -8,14 +9,24 @@ function formatFile(filepath: string, fileEncoding: string, maxStringLength: num
      * create local variable
      */
     let genSpaceCurrentNum: number = 0;
-    const langLineMaxSpaceAheadNum: number = maxStringLength + (HASH_STRING.length) + (EIGHT_SPACES.length);
+    const config = vscode.workspace.getConfiguration('edk2-uni-formatter');
+    const spaceOnMaxTokenAndLanNum = config['spaceOnMaxTokenAndLan'];
+    let spaceOnMaxTokenAndLanStr: string = '';
     let langLineMaxSpaceAhead: string = '';
     let identifierLineMaxSpaceBehind: number;
     let fileString: string = '';
     let identifierName: string;
     let identifierNameLength: number;
     let identifierValue: string;
-
+    
+    /**
+     * 產生user自行定義的空白數
+     */
+    for(genSpaceCurrentNum=0 ; genSpaceCurrentNum<spaceOnMaxTokenAndLanNum ; genSpaceCurrentNum++) {
+      spaceOnMaxTokenAndLanStr += ONE_SPACE;
+    }
+    
+    const langLineMaxSpaceAheadNum: number = maxStringLength + (HASH_STRING.length) + spaceOnMaxTokenAndLanNum;
     /**
      * 產生只有#language行的切齊點
      */
@@ -52,7 +63,7 @@ function formatFile(filepath: string, fileEncoding: string, maxStringLength: num
             spacesBetweenIdentifierAndLang += ONE_SPACE;
           }// 此迴圈將當前identifierName後面的空白補得和該檔案內identifierName長度最長者一樣
           
-          spacesBetweenIdentifierAndLang = spacesBetweenIdentifierAndLang + EIGHT_SPACES; //將identifierName 和 #language中間加8個空白
+          spacesBetweenIdentifierAndLang = spacesBetweenIdentifierAndLang + spaceOnMaxTokenAndLanStr; //將identifierName 和 #language中間加8個空白
           identifierValue = line.trim().split(HASH_LANGUAGE)[1]; //!!!Notice!!! this string got ONE space ahead
           fileString = fileString + HASH_STRING + identifierName + spacesBetweenIdentifierAndLang + HASH_LANGUAGE + identifierValue + '\r\n';
         }
