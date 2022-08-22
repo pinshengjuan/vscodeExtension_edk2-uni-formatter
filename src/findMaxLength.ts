@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as readline from "readline";
 
-function findMaxLength(filepath: string, fileEncoding: string): Promise<any> {
+function findMaxLength(filepath: string, fileEncoding: BufferEncoding): Promise<any> {
   return new Promise(resolve => {
     /**
      * create local variable

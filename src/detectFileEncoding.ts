@@ -8,7 +8,7 @@ function detectFileEncoding(filepath: string): Promise<any> {
      * create local variable
      */
       const chardet = require('chardet');
-      const encodingType: string = chardet.detectFileSync(filepath);
+      const encodingType: BufferEncoding = chardet.detectFileSync(filepath);
 
     /**
      * resolve result

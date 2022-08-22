@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as util from 'util';
 
-function writeUni(filepath: string, fileEncoding: string, fileString: string){
+function writeUni(filepath: string, fileEncoding: BufferEncoding, fileString: string){
 
   const writeFile = util.promisify(fs.writeFile);
 
