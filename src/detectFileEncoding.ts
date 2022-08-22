@@ -1,19 +1,23 @@
-import { rejects } from 'assert';
-import * as fs from 'fs';
-import * as readline from "readline";
-
+/**
+ *
+ * @param filepath
+ * @returns
+ */
 function detectFileEncoding(filepath: string): Promise<any> {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     /**
      * create local variable
      */
-      const chardet = require('chardet');
-      const encodingType: BufferEncoding = chardet.detectFileSync(filepath);
-
+    const chardet = require("chardet");
     /**
-     * resolve result
+     * get file encoding
      */
+    chardet.detectFile(filepath).then((encodingType: BufferEncoding) => {
+      /**
+       * resolve encoding
+       */
       resolve(encodingType);
+    });
   });
 }
 
