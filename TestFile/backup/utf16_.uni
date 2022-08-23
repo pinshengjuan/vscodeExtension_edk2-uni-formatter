@@ -1,0 +1,24 @@
+#string STR_EZ_USER_PROFILE_RESTORED        #language  eng  "[ %s ] has been restored."
+                                            #language zho "[ %s ] 已被恢复。"
+                                            #language chi "[ %s ] 已回復。"
+                                            #language jpn "[ %s ] 復元されました。"
+                                #language spa "[ %s ] se ha restaurado."
+                                            #language ger "[ %s ] wurde wiederhergestellt."
+                                                             #language kor "[ %s ]이(가) 복원되었습니다."
+                                            #language rus "[ %s ] восстановлен."
+                                            #language  por  "[ %s ] has been restored."
+
+
+#string STR_CPU_SKT_MINSPEED_STRING_STRING_DUMMY_IDENTIFIER	            		                #language por "%a{p110# : Occupied"
+
+                                    	                            
+                  
+
+// #string STR_EZ_USER_NO_PROFILE                            #language eng "No Profile to Load"
+//                                                #language zho "No Profile to Load"
+
+									
+
+#string		STR_CPU_SKT_MINSPEED_STRING_WITH_TAB       		            #language eng "Min CPU Speed"
+
+#string  STR_CPU_SKT_MINSPEED_STRING                            #language eng "Min CPU Speed"
