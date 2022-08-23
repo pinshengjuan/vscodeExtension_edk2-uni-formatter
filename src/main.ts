@@ -4,21 +4,23 @@ import detectFileEncoding from "./detectFileEncoding";
 import findMaxLength from "./findMaxLength";
 import formatFile from "./formatUni";
 import writeUni from "./writeUni";
+import readContent from "./readContent";
 
 /**
- * 
- * @param file 
+ *
+ * @param file
  */
-function main(file: string)
-{
-  detectFileEncoding(file).then(function(encoding){
-    // console.log('encoding right');
-    findMaxLength(file, encoding).then(function(maxSpace){
-      // console.log('return value of findMaxLength: ' + maxSpace);
-      formatFile(file, encoding, maxSpace).then(function(content){
-        // console.log(content);
-        writeUni(file, encoding, content);
-      });
+function main(file: string) {
+  detectFileEncoding(file).then(function (encoding) {
+    readContent(file).then(()=> {
+      // console.log('encoding right');
+      // findMaxLength(file, encoding).then(function(maxSpace){
+      //   // console.log('return value of findMaxLength: ' + maxSpace);
+      //   formatFile(file, encoding, maxSpace).then(function(content){
+      //     // console.log(content);
+      //     writeUni(file, encoding, content);
+      //   });
+      // });
     });
   });
 }
