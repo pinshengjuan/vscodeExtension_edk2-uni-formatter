@@ -71,7 +71,7 @@ function formatFile(
          * 這段處理#language開頭的行
          */
         const langLineSpaceNum: number =
-          maxSpace + HASH_STRING.length + config["spaceOnMaxTokenAndLan"];
+          maxSpace + HASH_STRING.length + config["spaceBetweenTokenAndLanguageCode"];
         langLineSpace = StrProcess.insertSpace(langLineSpaceNum);
         content += langLineSpace + StrProcess.overallIdentiVal(line);
       } else if (line === "") {

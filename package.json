@@ -31,11 +31,11 @@
     "configuration": {
       "title": "EDK2 uni formatter",
       "properties": {
-        "edk2-uni-formatter.spaceOnMaxTokenAndLan": {
+        "edk2-uni-formatter.spaceBetweenTokenAndLanguageCode": {
           "type": "number",
           "default": 8,
           "minimum": 1,
-          "description": "Provide space numbers between max length Token and LanguageCodes"
+          "description": "Provide space numbers between identifier and LanguageCodes.\nRefer: https://edk2-docs.gitbook.io/edk-ii-uni-specification/2_unicode_strings_file_format"
         },
         "edk2-uni-formatter.endOfLineWith": {
           "type": "string",

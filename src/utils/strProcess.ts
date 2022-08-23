@@ -22,7 +22,7 @@ class StrProcess {
 
   public spaceOnConfig() {
     const config = vscode.workspace.getConfiguration("edk2-uni-formatter");
-    const spaceConfig = config["spaceOnMaxTokenAndLan"];
+    const spaceConfig = config["spaceBetweenTokenAndLanguageCode"];
 
     return this.insertSpace(spaceConfig);
   }
