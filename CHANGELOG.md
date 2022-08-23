@@ -2,7 +2,13 @@
 
 All notable changes to the "edk2-uni-formatter" extension will be documented in this file.
 
-## [1.1.1]
+## [1.2.0]
+- Add end-of-line with:[CR, CRLF, LF] configuration
+- Fix if file first line only contain spaces will cause formatted file garbled.
+- Fix if language define's name matches identifier value will cause formatted value being cut.
+- Change max space's configuration name(the configuration added on 1.1.0)
+
+## [1.1.2]
 - Use yarn instead
 - Code clean up
 
