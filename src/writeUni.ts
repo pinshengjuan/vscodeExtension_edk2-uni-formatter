@@ -3,15 +3,15 @@ import * as util from 'util';
 
 /**
  * 
- * @param filepath 
+ * @param file 
  * @param fileEncoding 
- * @param fileString 
+ * @param content 
  */
-function writeUni(filepath: string, fileEncoding: BufferEncoding, fileString: string){
+function writeUni(file: string, fileEncoding: BufferEncoding, content: string){
 
   const writeFile = util.promisify(fs.writeFile);
 
-  writeFile(filepath, fileString, { encoding: fileEncoding })
+  writeFile(file, content, { encoding: fileEncoding })
   .then(() => {
           console.log('File formatted!');
   })

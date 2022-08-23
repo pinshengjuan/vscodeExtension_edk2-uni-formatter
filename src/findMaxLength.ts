@@ -5,14 +5,11 @@ import StrProcess from "./utils/strProcess";
 
 /**
  * Traverse the file to get the longest identify name's length
- * @param filepath
- * @param fileEncoding
+ * @param file
+ * @param encoding
  * @returns
  */
-function findMaxLength(
-  filepath: string,
-  fileEncoding: BufferEncoding
-): Promise<any> {
+function findMaxLength(file: string, encoding: BufferEncoding): Promise<any> {
   return new Promise((resolve) => {
     /**
      * create local variable
@@ -23,8 +20,8 @@ function findMaxLength(
     /**
      * create read stream & readline interface
      */
-    const readStream = fs.createReadStream(filepath);
-    readStream.setEncoding(fileEncoding);
+    const readStream = fs.createReadStream(file);
+    readStream.setEncoding(encoding);
     const rl = readline.createInterface({
       input: readStream,
       crlfDelay: Infinity,
