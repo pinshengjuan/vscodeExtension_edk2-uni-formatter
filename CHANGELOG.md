@@ -2,6 +2,9 @@
 
 All notable changes to the "edk2-uni-formatter" extension will be documented in this file.
 
+## [1.2.1]
+- Fix some encoding type will cause formatted file garbled.
+
 ## [1.2.0]
 - Add end-of-line with:[CR, CRLF, LF] configuration
 - Fix if file first line only contain spaces will cause formatted file garbled.

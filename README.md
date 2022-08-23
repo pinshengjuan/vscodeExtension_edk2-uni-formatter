@@ -15,3 +15,5 @@ Via Visual Studio Marketplace [edk2-uni-formatter](https://marketplace.visualstu
     The escape code that adds at the end of each line.
 2. The configuration "Space Between Token and LanguageCode":
     The extension will first make an alignment base on the longest name of Token, then this configuration is used to add space(s) behind, the number of space(s) is/are user's define.
+
+### Unsupported encoding: UTF-16 BE
