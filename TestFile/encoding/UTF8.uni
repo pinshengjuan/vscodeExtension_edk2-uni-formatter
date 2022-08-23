@@ -1,2 +1,7 @@
  
  #string STR_RADIO_ENABLE_MESSAGE                #language eng " WAN Radio"
+ 
+ 
+ #string STR_CPU_SKT_MINSPEED_STRING_WITH_TAB                       #language eng "Min CPU Speed"
+
+#string STR_CPU_SKT_MINSPEED_STRING                                #language eng "Min CPU Speed"
