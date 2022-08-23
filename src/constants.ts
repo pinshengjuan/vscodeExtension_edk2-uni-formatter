@@ -1,3 +1,6 @@
+export const CR = "\r";
+export const LF = "\n";
+export const CRLF = CR+LF;
 export const ONE_SPACE = " ";
 export const HASH_STRING = "#string ";
 export const HASH_LANGUAGE = "#language";

@@ -1,20 +1,24 @@
 import * as fs from "fs";
 import * as readline from "readline";
 import * as vscode from "vscode";
-import { HASH_STRING, PATTERN_STRING, PATTERN_LANGUAGE } from "./constants";
+import {
+  HASH_STRING,
+  PATTERN_STRING,
+  PATTERN_LANGUAGE,
+} from "./constants";
 import StrProcess from "./utils/strProcess";
 
 /**
  *
- * @param filepath
- * @param fileEncoding
- * @param max
+ * @param file
+ * @param encoding
+ * @param maxSpace
  * @returns
  */
 function formatFile(
-  filepath: string,
-  fileEncoding: BufferEncoding,
-  max: number
+  file: string,
+  encoding: BufferEncoding,
+  maxSpace: number
 ): Promise<any> {
   return new Promise((resolve) => {
     /**
@@ -30,8 +34,8 @@ function formatFile(
     /**
      * create read stream & readline interface
      */
-    const readStream = fs.createReadStream(filepath);
-    readStream.setEncoding(fileEncoding);
+    const readStream = fs.createReadStream(file);
+    readStream.setEncoding(encoding);
     const rl = readline.createInterface({
       input: readStream,
       crlfDelay: Infinity,
@@ -57,7 +61,7 @@ function formatFile(
         /**
          * insertSpace()將當前identiName後面的空白補得和該檔案內identiName長度最長者一樣
          */
-        spaceBetween = StrProcess.insertSpace(max - identiNameLen);
+        spaceBetween = StrProcess.insertSpace(maxSpace - identiNameLen);
 
         spaceBetween = spaceBetween + spaceOnConfigStr; //將identiName和#language中間加user定義的空白
         content +=
@@ -70,19 +74,19 @@ function formatFile(
          * 這段處理#language開頭的行
          */
         const langLineSpaceNum: number =
-          max + HASH_STRING.length + config["spaceOnMaxTokenAndLan"];
+          maxSpace + HASH_STRING.length + config["spaceOnMaxTokenAndLan"];
         langLineSpace = StrProcess.insertSpace(langLineSpaceNum);
         content += langLineSpace + StrProcess.overallIdentiVal(line);
       } else if (line.trim() === "") {
         /**
          * 將只有Tab或/和space的行換成一換行符號
          */
-        content += "\r\n";
+        content += StrProcess.getEolConfig();
       } else {
         /**
          * 非可辨識的開頭則不動
          */
-        content += line + "\r\n";
+        content += line + StrProcess.getEolConfig();
       }
     });
 

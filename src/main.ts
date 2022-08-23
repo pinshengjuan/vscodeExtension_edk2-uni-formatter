@@ -7,17 +7,17 @@ import writeUni from "./writeUni";
 
 /**
  * 
- * @param filePath 
+ * @param file 
  */
-function main(filePath: string)
+function main(file: string)
 {
-  detectFileEncoding(filePath).then(function(fileEncoding){
+  detectFileEncoding(file).then(function(encoding){
     // console.log('encoding right');
-    findMaxLength(filePath, fileEncoding).then(function(maxStringLength){
-      // console.log('return value of findMaxLength: ' + maxStringLength);
-      formatFile(filePath, fileEncoding, maxStringLength).then(function(fileString){
-        // console.log(fileString);
-        writeUni(filePath, fileEncoding, fileString);
+    findMaxLength(file, encoding).then(function(maxSpace){
+      // console.log('return value of findMaxLength: ' + maxSpace);
+      formatFile(file, encoding, maxSpace).then(function(content){
+        // console.log(content);
+        writeUni(file, encoding, content);
       });
     });
   });

@@ -1,9 +1,9 @@
 /**
  *
- * @param filepath
+ * @param file
  * @returns
  */
-function detectFileEncoding(filepath: string): Promise<any> {
+function detectFileEncoding(file: string): Promise<any> {
   return new Promise((resolve) => {
     /**
      * create local variable
@@ -12,11 +12,11 @@ function detectFileEncoding(filepath: string): Promise<any> {
     /**
      * get file encoding
      */
-    chardet.detectFile(filepath).then((encodingType: BufferEncoding) => {
+    chardet.detectFile(file).then((encoding: BufferEncoding) => {
       /**
        * resolve encoding
        */
-      resolve(encodingType);
+      resolve(encoding);
     });
   });
 }
