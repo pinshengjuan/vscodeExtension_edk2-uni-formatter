@@ -1,5 +1,12 @@
 import * as vscode from "vscode";
-import { CR, LF, CRLF, ONE_SPACE, HASH_LANGUAGE } from "../constants";
+import {
+  CR,
+  LF,
+  CRLF,
+  ONE_SPACE,
+  HASH_LANGUAGE,
+  PATTERN_TWO_QUOTE,
+} from "../constants";
 
 class StrProcess {
   public insertSpace(maxSpace: number) {
@@ -53,12 +60,20 @@ class StrProcess {
   }
 
   private getIdentiVal(line: string) {
-    return line
+    const identiValue: any = line
       .trim()
       .split(HASH_LANGUAGE)[1]
       .trim()
-      .split(this.getLanguage(line))[1]
-      .trim();
+      .split(PATTERN_TWO_QUOTE);
+    const overallLen: number = identiValue.length;
+    let content: string = "";
+    /**
+     * usr for loop to avoid quotes inside quotes
+     */
+    for (let count = 1; count < overallLen - 2; count++) {
+      content += identiValue[count].trim();
+    }
+    return content;
   }
 }
 
