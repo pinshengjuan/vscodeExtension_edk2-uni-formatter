@@ -81,12 +81,12 @@ function formatFile(
         /**
          * 將只有Tab或/和space的行換成一換行符號
          */
-        content += "\r\n";
+        content += StrProcess.getEolConfig();
       } else {
         /**
          * 非可辨識的開頭則不動
          */
-        content += line + "\r\n";
+        content += line + StrProcess.getEolConfig();
       }
     });
 

@@ -36,6 +36,15 @@
           "default": 8,
           "minimum": 1,
           "description": "Provide space numbers between max length Token and LanguageCodes"
+        },
+        "edk2-uni-formatter.endOfLineWith": {
+          "type": "string",
+          "default": "CRLF",
+          "enum": [
+            "LF",
+            "CRLF",
+            "CR"
+          ]
         }
       }
     },
