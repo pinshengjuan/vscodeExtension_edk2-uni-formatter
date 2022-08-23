@@ -1,11 +1,7 @@
 import * as fs from "fs";
 import * as readline from "readline";
 import * as vscode from "vscode";
-import {
-  HASH_STRING,
-  PATTERN_STRING,
-  PATTERN_LANGUAGE,
-} from "./constants";
+import { HASH_STRING, PATTERN_STRING, PATTERN_LANGUAGE } from "./constants";
 import StrProcess from "./utils/strProcess";
 
 /**
@@ -51,6 +47,7 @@ function formatFile(
      */
     rl.on("line", (line: string) => {
       let spaceBetween: string = "";
+      line = line.trim();
 
       if (line.match(PATTERN_STRING)) {
         /**
@@ -69,7 +66,7 @@ function formatFile(
           identiName +
           spaceBetween +
           StrProcess.overallIdentiVal(line);
-      } else if (line.trim().match(PATTERN_LANGUAGE)) {
+      } else if (line.match(PATTERN_LANGUAGE)) {
         /**
          * 這段處理#language開頭的行
          */
@@ -77,7 +74,7 @@ function formatFile(
           maxSpace + HASH_STRING.length + config["spaceOnMaxTokenAndLan"];
         langLineSpace = StrProcess.insertSpace(langLineSpaceNum);
         content += langLineSpace + StrProcess.overallIdentiVal(line);
-      } else if (line.trim() === "") {
+      } else if (line === "") {
         /**
          * 將只有Tab或/和space的行換成一換行符號
          */

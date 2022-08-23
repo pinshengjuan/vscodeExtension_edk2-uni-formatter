@@ -36,6 +36,7 @@ function findMaxLength(file: string, encoding: BufferEncoding): Promise<any> {
      * readline event: `line` handler
      */
     rl.on("line", (line: string) => {
+      line = line.trim();
       if (line.match(PATTERN_STRING)) {
         current = StrProcess.getIdentiName(line).length;
         max = max < current ? current : max;
