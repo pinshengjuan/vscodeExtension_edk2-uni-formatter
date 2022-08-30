@@ -2,6 +2,9 @@
 
 All notable changes to the "edk2-uni-formatter" extension will be documented in this file.
 
+## [1.2.2]
+- Add LFCR in "end-of-line with" option.
+
 ## [1.2.1]
 - Fix some encoding type will cause formatted file garbled.
 
