@@ -3,6 +3,7 @@ import {
   CR,
   LF,
   CRLF,
+  LFCR,
   ONE_SPACE,
   HASH_LANGUAGE,
   PATTERN_TWO_QUOTE,
@@ -37,6 +38,8 @@ class StrProcess {
         return LF;
       case "CRLF":
         return CRLF;
+      case "LFCR":
+        return LFCR;
     }
   }
 
