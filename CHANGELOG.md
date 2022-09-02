@@ -2,6 +2,12 @@
 
 All notable changes to the "edk2-uni-formatter" extension will be documented in this file.
 
+## [1.3.0]
+
+- Support multiple files formatting under EXPLORER/Context.
+- Support keybinding on both single file and multiple file under EXPLORER/Context.
+- Support keybinding under Editor.
+
 ## [1.2.2]
 
 - Add LFCR in "end-of-line with" option.
