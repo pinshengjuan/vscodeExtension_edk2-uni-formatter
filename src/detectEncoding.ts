@@ -17,8 +17,7 @@ function detectEncoding(file: string): Promise<any> {
       /**
        * add workaround for ISO-8859-1 treat as UTF-8
        */
-      if(encoding.toString() === "ISO-8859-1")
-      {
+      if (encoding.toString() === "ISO-8859-1") {
         encodingWorkaround = "utf8";
         resolve(encodingWorkaround);
       }
