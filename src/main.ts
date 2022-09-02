@@ -6,23 +6,27 @@ import writeUni from "./writeUni";
 
 /**
  *
- * @param file
+ * @param files
  */
-function main(file: string) {
-  detectEncoding(file).then(function (encoding) {
-    // console.log('encoding: ' + encoding);
-    detectBOM(file, encoding)
-      .then((bom) => {
-        // console.log('bom: ' + bom);
-        findMaxLength(file, encoding).then(function (maxSpace) {
-          // console.log('return value of findMaxLength: ' + maxSpace);
-          formatFile(file, encoding, maxSpace).then(function (content) {
-            writeUni(file, encoding, content, bom);
+function main(files: string[]) {
+  for (let fileCount in files) {
+    detectEncoding(files[fileCount]).then(function (encoding) {
+      // console.log('encoding: ' + encoding);
+      detectBOM(files[fileCount], encoding)
+        .then((bom) => {
+          // console.log('bom: ' + bom);
+          findMaxLength(files[fileCount], encoding).then(function (maxSpace) {
+            // console.log('return value of findMaxLength: ' + maxSpace);
+            formatFile(files[fileCount], encoding, maxSpace).then(function (
+              content
+            ) {
+              writeUni(files[fileCount], encoding, content, bom);
+            });
           });
-        });
-      })
-      .catch((error) => console.log(error));
-  });
+        })
+        .catch((error) => console.log(error));
+    });
+  }
 }
 
 export default main;
