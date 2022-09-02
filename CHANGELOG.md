@@ -2,6 +2,10 @@
 
 All notable changes to the "edk2-uni-formatter" extension will be documented in this file.
 
+## [1.3.1]
+
+- Remove useless class method
+
 ## [1.3.0]
 
 - Support multiple files formatting under EXPLORER/Context.
