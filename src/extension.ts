@@ -19,9 +19,19 @@ export function activate(context: vscode.ExtensionContext) {
   );
   context.subscriptions.push(
     vscode.commands.registerCommand(
-      "edk2-uni-formatter.formatUni",
+      "edk2-uni-formatter.formatUniEditor",
       (...fileObj) => {
-        GetFileInStr.context(fileObj).then((fileStr: string[]) => {
+        GetFileInStr.contextEditor(fileObj).then((fileStr: string[]) => {
+          main(fileStr); //This is the entry point of the whole project
+        });
+      }
+    )
+  );
+  context.subscriptions.push(
+    vscode.commands.registerCommand(
+      "edk2-uni-formatter.formatUniExplorer",
+      (...fileObj) => {
+        GetFileInStr.contextExplorer(fileObj).then((fileStr: string[]) => {
           main(fileStr); //This is the entry point of the whole project
         });
       }

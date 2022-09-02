@@ -65,7 +65,11 @@
         "title": "EDK2 uni formatter keybinding"
       },
       {
-        "command": "edk2-uni-formatter.formatUni",
+        "command": "edk2-uni-formatter.formatUniEditor",
+        "title": "Format Document"
+      },
+      {
+        "command": "edk2-uni-formatter.formatUniExplorer",
         "title": "Format Document"
       }
     ],
@@ -73,14 +77,14 @@
       "editor/context": [
         {
           "when": "resourceLangId == edk2_uni",
-          "command": "edk2-uni-formatter.formatUni",
+          "command": "edk2-uni-formatter.formatUniEditor",
           "group": "navigation"
         }
       ],
       "explorer/context": [
         {
           "when": "resourceLangId == edk2_uni",
-          "command": "edk2-uni-formatter.formatUni"
+          "command": "edk2-uni-formatter.formatUniExplorer"
         }
       ]
     }

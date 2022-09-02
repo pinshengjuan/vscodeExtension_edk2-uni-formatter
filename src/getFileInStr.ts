@@ -4,7 +4,15 @@ import * as vscode from "vscode";
  *
  */
 class GetFileInStr {
-  public context(fileObj: any): Promise<any> {
+  public contextEditor(fileObj: any): Promise<any> {
+    return new Promise((resolve) => {
+      const fileStr: string[] = [];
+
+      fileStr.push(fileObj[0].path.replace(RegExp(/^\//), ""));
+      resolve(fileStr);
+    });
+  }
+  public contextExplorer(fileObj: any): Promise<any> {
     return new Promise((resolve) => {
       const fileStr: string[] = [];
       let fileCount: number = 0;
