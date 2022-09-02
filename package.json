@@ -16,10 +16,19 @@
     "url": "https://github.com/pinshengjuan/edk2-uni-formatter"
   },
   "activationEvents": [
-    "onLanguage:edk2_uni"
+    "onLanguage:edk2_uni",
+    "onCommand:edk2-uni-formatter.keybinding"
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "keybindings": [
+      {
+        "command": "edk2-uni-formatter.keybinding",
+        "key": "ctrl+alt+f",
+        "mac": "cmd+alt+f",
+        "when": "resourceLangId == edk2_uni"
+      }
+    ],
     "languages": [
       {
         "id": "edk2_uni",
@@ -50,6 +59,11 @@
       }
     },
     "commands": [
+      {
+        "command": "edk2-uni-formatter.keybinding",
+        "when": "resourceLangId == edk2_uni",
+        "title": "EDK2 uni formatter keybinding"
+      },
       {
         "command": "edk2-uni-formatter.formatUni",
         "title": "Format Document"
