@@ -20,10 +20,10 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
     vscode.commands.registerCommand(
       "edk2-uni-formatter.formatUniEditor",
-      (...fileObj) => {
-        GetFileInStr.contextEditor(fileObj).then((fileStr: string[]) => {
-          main(fileStr); //This is the entry point of the whole project
-        });
+      (file: vscode.Uri) => {
+        const fileStr: string[] = [];
+        fileStr.push(file.fsPath);
+        main(fileStr); //This is the entry point of the whole project
       }
     )
   );

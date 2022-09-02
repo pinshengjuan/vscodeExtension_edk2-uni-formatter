@@ -4,14 +4,6 @@ import * as vscode from "vscode";
  *
  */
 class GetFileInStr {
-  public contextEditor(fileObj: any): Promise<any> {
-    return new Promise((resolve) => {
-      const fileStr: string[] = [];
-
-      fileStr.push(fileObj[0].path.replace(RegExp(/^\//), ""));
-      resolve(fileStr);
-    });
-  }
   public contextExplorer(fileObj: any): Promise<any> {
     return new Promise((resolve) => {
       const fileStr: string[] = [];
