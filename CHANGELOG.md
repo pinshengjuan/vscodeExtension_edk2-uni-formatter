@@ -2,6 +2,11 @@
 
 All notable changes to the "edk2-uni-formatter" extension will be documented in this file.
 
+## [1.4.1]
+
+- Change repository
+- Add License
+
 ## [1.4.0]
 
 - Support action on editor title context

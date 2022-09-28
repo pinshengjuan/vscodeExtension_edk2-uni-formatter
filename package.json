@@ -3,7 +3,7 @@
   "displayName": "EDK2 uni formatter",
   "description": "",
   "icon": "img/icon/Uni.png",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "publisher": "pinshengjuan",
   "engines": {
     "vscode": "^1.70.0"
